@@ -32,7 +32,81 @@ public class Home  {
 
             }
         });
+        SUPPLIERSButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrame homeFrame = (JFrame) SwingUtilities.getWindowAncestor(mainframe);
+                SuppliersManage suppliersManage = new SuppliersManage();
 
+                JFrame frame = new JFrame("Suppliers Manage");
+
+                frame.setSize(1100, 650); // Set a fixed size for the frame
+                frame.setLocationRelativeTo(null);// Set the frame to appear in the center of the screen
+
+                frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+                frame.setContentPane(suppliersManage.main);
+                frame.setVisible(true);
+
+                homeFrame.dispose();
+
+            }
+        });
+        MANAGEINVENTORYButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrame homeFrame = (JFrame) SwingUtilities.getWindowAncestor(mainframe);
+                InventoryManage inventoryManage = new InventoryManage();
+
+                JFrame frame = new JFrame("Inventory Manage");
+
+                frame.setSize(1100, 650); // Set a fixed size for the frame
+                frame.setLocationRelativeTo(null);// Set the frame to appear in the center of the screen
+
+                frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+                frame.setContentPane(inventoryManage.main);
+                frame.setVisible(true);
+
+                homeFrame.dispose();
+
+            }
+        });
+        MANAGEEMPLOYEESButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrame homeFrame = (JFrame) SwingUtilities.getWindowAncestor(mainframe);
+                EmployeesManage employeesManage = new EmployeesManage();
+
+                JFrame frame = new JFrame("Employs Manage");
+
+                frame.setSize(1100, 650); // Set a fixed size for the frame
+                frame.setLocationRelativeTo(null);// Set the frame to appear in the center of the screen
+
+                frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+                frame.setContentPane(employeesManage.main);
+                frame.setVisible(true);
+
+                homeFrame.dispose();
+
+            }
+        });
+        REPORTSButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrame homeFrame = (JFrame) SwingUtilities.getWindowAncestor(mainframe);
+                ReportsGenerate reportsGenerate = new ReportsGenerate();
+
+                JFrame frame = new JFrame("Reports Generate");
+
+                frame.setSize(1100, 650); // Set a fixed size for the frame
+                frame.setLocationRelativeTo(null);// Set the frame to appear in the center of the screen
+
+                frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+                frame.setContentPane(reportsGenerate.main);
+                frame.setVisible(true);
+
+                homeFrame.dispose();
+            }
+        });
     }
     public JPanel getMainframe() {
         return mainframe;
