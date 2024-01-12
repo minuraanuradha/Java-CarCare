@@ -51,7 +51,7 @@ public class SuppliersManage {
         connect();
         table_lord();
 
-        ADDButton.addActionListener(new ActionListener() {
+       ADDButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
 
@@ -188,6 +188,7 @@ public class SuppliersManage {
                 }
             }
         });
+
 
        BACKButton.addActionListener(new ActionListener() {
         @Override
