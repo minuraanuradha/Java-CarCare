@@ -1,11 +1,61 @@
+import net.proteanit.sql.DbUtils;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.*;
 
 public class ReportsGenerate {
     public JPanel main;
     private JButton BACKButton;
-public ReportsGenerate() {
+    private JTable orders;
+    private JTable Employees;
+    private JTable table1;
+    private JTable suppliers;
+
+    Connection con;
+    PreparedStatement pst;
+
+    public void connect(){
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            con = DriverManager.getConnection("jdbc:mysql://localhost/car_care","root","");
+            System.out.println("Succes");
+        } catch (ClassNotFoundException e2) {
+            throw new RuntimeException(e2);
+        } catch (SQLException e3) {
+            throw new RuntimeException(e3);
+        }
+
+    }
+   //table Lording
+    void orders_table_lord() {
+        try {
+            pst = con.prepareStatement("select * from orders");
+            ResultSet rs=pst.executeQuery();
+            orders.setModel(DbUtils.resultSetToTableModel(rs));
+        } catch (SQLException e012) {
+            e012.printStackTrace();
+        }
+    }
+
+    void suppliers_table_lord() {
+        try {
+            pst = con.prepareStatement("select * from suppliers");
+            ResultSet rs=pst.executeQuery();
+            suppliers.setModel(DbUtils.resultSetToTableModel(rs));
+        } catch (SQLException e012) {
+            e012.printStackTrace();
+        }
+    }
+
+    public ReportsGenerate() {
+
+    connect();
+
+    orders_table_lord();
+    suppliers_table_lord();
+
     BACKButton.addActionListener(new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent e) {
@@ -22,5 +72,13 @@ public ReportsGenerate() {
             homeFrame.setVisible(true);
         }
     });
+
+    }
+
+
+
 }
-}
+
+
+
+

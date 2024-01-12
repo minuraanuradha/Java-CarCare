@@ -139,7 +139,7 @@ public class SuppliersManage {
                 supplierid = txtS_search.getText();
 
                 try(Connection con = DriverManager.getConnection("jdbc:mysql://localhost/car_care", "root", "");
-                    PreparedStatement pst = con.prepareStatement("update suppliers SET S_code = ?, S_name = ?, S_email = ?,S_product = ?, S_status = ? where id = ? "))
+                    PreparedStatement pst = con.prepareStatement("update suppliers SET S_code = ?, S_name = ?, S_email = ?,S_product = ?, S_status = ? where S_code = ? "))
                 {
                     pst.setString(1,S_code);
                     pst.setString(2,S_name);

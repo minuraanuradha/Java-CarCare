@@ -40,7 +40,7 @@ public class OrderMange {
 
     void table_lord() {
         try {
-            pst = con.prepareStatement("select * from orders");
+            pst = con.prepareStatement("SELECT O_code, O_name, O_num, O_email, O_cost FROM orders");
             ResultSet rs=pst.executeQuery();
             table1.setModel(DbUtils.resultSetToTableModel(rs));
         } catch (SQLException e012) {
@@ -95,7 +95,7 @@ public class OrderMange {
                 String ordercode = txtO_search.getText();
 
                 try {
-                    pst = con.prepareStatement("select O_code,O_name,O_num,O_email,O_cost from orders where id = ? ");// Use to seach Orders
+                    pst = con.prepareStatement("select O_code,O_name,O_num,O_email,O_cost from orders where O_code = ? ");// Use to seach Orders
                     pst.setString(1,ordercode);
                     ResultSet rs = pst.executeQuery();
 
@@ -173,7 +173,7 @@ public class OrderMange {
                 orderid = txtO_search.getText();
 
                 try(Connection con = DriverManager.getConnection("jdbc:mysql://localhost/car_care", "root", "");
-                    PreparedStatement pst = con.prepareStatement("delete from orders where id = ? "))
+                    PreparedStatement pst = con.prepareStatement("delete from orders where O_code = ? "))
                 {
                     pst.setString(1,orderid);
                     pst.executeUpdate();
