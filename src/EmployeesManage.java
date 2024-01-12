@@ -5,7 +5,8 @@ import java.awt.event.ActionListener;
 public class EmployeesManage {
     public JPanel main;
     private JButton BACKButton;
-public EmployeesManage() {
+
+    public EmployeesManage() {
     BACKButton.addActionListener(new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent e) {
@@ -24,4 +25,17 @@ public EmployeesManage() {
         }
     });
 }
+
+    /*
+    public static void main(String[] args) {
+
+        JFrame frame = new JFrame("OrderMange");
+
+        frame.setSize(1100, 650);// Set a fixed size for the frame
+        frame.setLocationRelativeTo(null);// Set the frame to appear in the center of the screen
+
+        frame.setContentPane(new EmployeesManage().main);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setVisible(true);
+    }*/
 }
