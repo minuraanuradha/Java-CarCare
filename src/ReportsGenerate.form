@@ -154,6 +154,7 @@
                       <autoCreateRowSorter value="false"/>
                       <font name="Monospaced" size="12" style="0"/>
                       <foreground color="-14143706"/>
+                      <gridColor color="-11579054"/>
                       <intercellSpacing width="1" height="1"/>
                       <selectionForeground color="-14143706"/>
                     </properties>
@@ -177,7 +178,7 @@
                 <properties/>
                 <border type="none"/>
                 <children>
-                  <component id="2492" class="javax.swing.JTable" binding="suppliers">
+                  <component id="2492" class="javax.swing.JTable" binding="employees">
                     <constraints/>
                     <properties>
                       <autoCreateRowSorter value="false"/>
@@ -206,7 +207,7 @@
             </constraints>
             <properties>
               <font name="Monospaced" size="14" style="1"/>
-              <text value="SUPPLIERS DETAILS"/>
+              <text value="EMPLOYEES DETAILS"/>
             </properties>
           </component>
         </children>
@@ -236,7 +237,7 @@
                 <properties/>
                 <border type="none"/>
                 <children>
-                  <component id="bd2c1" class="javax.swing.JTable" binding="table1" default-binding="true">
+                  <component id="bd2c1" class="javax.swing.JTable" binding="empord">
                     <constraints/>
                     <properties>
                       <autoCreateRowSorter value="false"/>
@@ -265,7 +266,7 @@
                 <properties/>
                 <border type="none"/>
                 <children>
-                  <component id="62258" class="javax.swing.JTable" binding="employees">
+                  <component id="62258" class="javax.swing.JTable" binding="suppliers">
                     <constraints/>
                     <properties>
                       <autoCreateRowSorter value="false"/>
@@ -285,7 +286,7 @@
             </constraints>
             <properties>
               <font name="Monospaced" size="14" style="1"/>
-              <text value="ORDER DETAILS"/>
+              <text value="ORDER and EMPLOYEES DETAILS"/>
             </properties>
           </component>
           <component id="9f815" class="javax.swing.JLabel">
@@ -294,7 +295,7 @@
             </constraints>
             <properties>
               <font name="Monospaced" size="14" style="1"/>
-              <text value="EMPLOYEES DETAILS"/>
+              <text value="SUPPLIERS DETAILS"/>
             </properties>
           </component>
         </children>
