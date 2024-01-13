@@ -10,6 +10,7 @@ public class Home  {
     private JButton REPORTSButton ;
     private JPanel mainframe;
     private JLabel Title;
+    private JButton EMPLOYEESAndORDERSButton;
 
     public Home() {
         ORDERSButton.addActionListener(new ActionListener() {
@@ -105,6 +106,25 @@ public class Home  {
                 frame.setVisible(true);
 
                 homeFrame.dispose();
+            }
+        });
+        EMPLOYEESAndORDERSButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrame homeFrame = (JFrame) SwingUtilities.getWindowAncestor(mainframe);
+                EmpAndOrder empAndOrder =  new EmpAndOrder();
+
+                JFrame frame = new JFrame("Orders & EmployeeS Generate");
+
+                frame.setSize(1100, 650); // Set a fixed size for the frame
+                frame.setLocationRelativeTo(null);// Set the frame to appear in the center of the screen
+
+                frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+                frame.setContentPane(empAndOrder.main);
+                frame.setVisible(true);
+
+                homeFrame.dispose();
+
             }
         });
     }
