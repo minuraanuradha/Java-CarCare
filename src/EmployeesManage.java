@@ -149,7 +149,7 @@ public class EmployeesManage {
                 {
                     pst.setString(1,empid);
                     pst.executeUpdate();
-                    JOptionPane.showMessageDialog(null,"Employee Delete!");
+                    JOptionPane.showMessageDialog(null,"Records Delete!");
                     table_lord();
                     txtE_Id.setText("");
                     txtE_name.setText("");
@@ -207,7 +207,7 @@ public class EmployeesManage {
     }
 
 
-    public static void main(String[] args) {
+   /* public static void main(String[] args) {
 
         JFrame frame = new JFrame("Employee Mange");
 
@@ -217,5 +217,5 @@ public class EmployeesManage {
         frame.setContentPane(new EmployeesManage().main);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setVisible(true);
-    }
+    }*/
 }
