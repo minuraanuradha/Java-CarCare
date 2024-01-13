@@ -206,7 +206,7 @@
             </constraints>
             <properties>
               <font name="Monospaced" size="14" style="1"/>
-              <text value="EMPLOYEES DETAILS"/>
+              <text value="SUPPLIERS DETAILS"/>
             </properties>
           </component>
         </children>
@@ -265,7 +265,7 @@
                 <properties/>
                 <border type="none"/>
                 <children>
-                  <component id="62258" class="javax.swing.JTable" default-binding="true">
+                  <component id="62258" class="javax.swing.JTable" binding="employees">
                     <constraints/>
                     <properties>
                       <autoCreateRowSorter value="false"/>

@@ -9,7 +9,7 @@ public class ReportsGenerate {
     public JPanel main;
     private JButton BACKButton;
     private JTable orders;
-    private JTable Employees;
+    private JTable employees;
     private JTable table1;
     private JTable suppliers;
 
@@ -49,12 +49,22 @@ public class ReportsGenerate {
         }
     }
 
+    void emp_table_lord() {
+        try {
+            pst = con.prepareStatement("SELECT e_code,e_name,e_num,e_email,e_department,e_address FROM employees");
+            ResultSet rs=pst.executeQuery();
+            employees.setModel(DbUtils.resultSetToTableModel(rs));
+        } catch (SQLException e012) {
+            e012.printStackTrace();
+        }
+    }
     public ReportsGenerate() {
 
     connect();
 
     orders_table_lord();
     suppliers_table_lord();
+    emp_table_lord();
 
     BACKButton.addActionListener(new ActionListener() {
         @Override
