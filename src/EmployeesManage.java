@@ -5,6 +5,17 @@ import java.awt.event.ActionListener;
 public class EmployeesManage {
     public JPanel main;
     private JButton BACKButton;
+    private JTextField txtE_Id;
+    private JTextField txtE_name;
+    private JTextField txtO_num;
+    private JTextField txtO_email;
+    private JTextField txtO_cost;
+    private JButton ADDButton;
+    private JButton UPDATEButton;
+    private JButton DELETEButton;
+    private JButton SEACHButton;
+    private JTextField txtO_search;
+    private JTable table1;
 
     public EmployeesManage() {
     BACKButton.addActionListener(new ActionListener() {
