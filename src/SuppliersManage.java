@@ -93,7 +93,7 @@ public class SuppliersManage {
                 String supplierscode = txtS_search.getText();
 
                 try {
-                    pst = con.prepareStatement("select S_code,S_name,S_email,S_product,S_status from suppliers where id = ? ");// Use to seach Sup
+                    pst = con.prepareStatement("select S_code,S_name,S_email,S_product,S_status from suppliers where S_code = ? ");// Use to seach Sup
                     pst.setString(1,supplierscode);
                     ResultSet rs = pst.executeQuery();
 
@@ -171,18 +171,19 @@ public class SuppliersManage {
                 orderid = txtS_search.getText();
 
                 try(Connection con = DriverManager.getConnection("jdbc:mysql://localhost/car_care", "root", "");
-                    PreparedStatement pst = con.prepareStatement("delete from suppliers where id = ? "))
+                    PreparedStatement pst = con.prepareStatement("delete from suppliers where s_code = ? "))
                 {
                     pst.setString(1,orderid);
                     pst.executeUpdate();
                     JOptionPane.showMessageDialog(null,"Order Delete!");
-                    table_lord();
+
                     txtS_Id.setText("");
                     txtS_name.setText("");
                     txtS_email.setText("");
                     txtS_product.setText("");
                     txtS_status.setText("");
 
+                    table_lord();
                 } catch (SQLException ex) {
                     throw new RuntimeException(ex);
                 }

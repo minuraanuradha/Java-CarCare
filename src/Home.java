@@ -128,9 +128,7 @@ public class Home  {
             }
         });
     }
-    public JPanel getMainframe() {
-        return mainframe;
-    }
+
     public static void main(String[] args) {
         // Create and display the Home GUI
         SwingUtilities.invokeLater(new Runnable() {
@@ -148,4 +146,8 @@ public class Home  {
             }
         });
     }
+    public JPanel getMainframe() {
+        return mainframe;
+    }
+
 }

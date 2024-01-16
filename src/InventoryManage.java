@@ -1,11 +1,63 @@
+import net.proteanit.sql.DbUtils;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.*;
 
 public class InventoryManage {
     public JPanel main;
     private JButton BACKButton;
-public InventoryManage() {
+    private JTextField txtI_Id;
+    private JTextField txtI_name;
+    private JButton ADDButton;
+    private JButton UPDATEButton;
+    private JButton DELETEButton;
+    private JButton SEACHButton;
+    private JTextField txtI_search;
+    private JTextField txtI_quntity;
+    private JTextField txtI_price;
+    private JTable table1;
+    private JScrollPane table01;
+    private JTable table02;
+
+    Connection con;
+    PreparedStatement pst;
+
+    public void connect(){
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            con = DriverManager.getConnection("jdbc:mysql://localhost/car_care","root","");
+            System.out.println("Succes");
+        } catch (ClassNotFoundException e2) {
+            throw new RuntimeException(e2);
+        } catch (SQLException e3) {
+            throw new RuntimeException(e3);
+        }
+
+    }
+
+    void table01_lord() {
+        try {
+            pst = con.prepareStatement("SELECT I_code, I_name, I_quantity, I_unit price, FROM inventory");
+            ResultSet rs=pst.executeQuery();
+            table1.setModel(DbUtils.resultSetToTableModel(rs));
+        } catch (SQLException e012) {
+            e012.printStackTrace();
+        }
+    }
+
+    void table02_lord()  {
+        try {
+            pst = con.prepareStatement("SELECT I_name, I_quantity FROM inventory");
+            ResultSet rs=pst.executeQuery();
+            table02.setModel(DbUtils.resultSetToTableModel(rs));
+        } catch (SQLException e012) {
+            e012.printStackTrace();
+        }
+    }
+
+    public InventoryManage() {
     BACKButton.addActionListener(new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent e) {

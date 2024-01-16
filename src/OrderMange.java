@@ -84,7 +84,6 @@ public class OrderMange {
             } catch (SQLException e1){
                 e1.printStackTrace();
             }
-
         }
         });
 
@@ -141,7 +140,7 @@ public class OrderMange {
                 orderid = txtO_search.getText();
 
                 try(Connection con = DriverManager.getConnection("jdbc:mysql://localhost/car_care", "root", "");
-                    PreparedStatement pst = con.prepareStatement("update orders SET O_code = ?, O_name = ?, O_num = ?,O_email = ?, O_cost = ? where id = ? "))
+                    PreparedStatement pst = con.prepareStatement("update orders SET O_code = ?, O_name = ?, O_num = ?,O_email = ?, O_cost = ? where O_code = ? "))
                 {
                     pst.setString(1,O_code);
                     pst.setString(2,O_name);

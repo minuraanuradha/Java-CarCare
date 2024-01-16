@@ -148,8 +148,7 @@ public class EmpAndOrder {
                 } catch (SQLException e1) {
                     e1.printStackTrace();
                 }
-                // Send email
-                //sendEmail("recipient@example.com", "Subject", "Body: Employee and Order Details - " + e_code + ", " + o_code);
+
             }
         });
         /*ADDButton.addActionListener(new ActionListener() {
@@ -273,7 +272,7 @@ public class EmpAndOrder {
         });
     }
 
-    /*private void sendEmail(String to, String subject, String body) {
+    private void sendEmail(String to, String subject, String body) {
         // Set up JavaMail properties
         Properties properties = System.getProperties();
         properties.put("mail.smtp.host", "your_smtp_server");
@@ -307,5 +306,5 @@ public class EmpAndOrder {
         } catch (MessagingException mex) {
             mex.printStackTrace();
         }
-    }*/
+    }
     }

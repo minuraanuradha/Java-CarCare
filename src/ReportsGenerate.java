@@ -88,6 +88,7 @@ public class ReportsGenerate {
 
             homeFrame.setSize(1100, 650);
             homeFrame.setLocationRelativeTo(null);
+
             homeFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             homeFrame.getContentPane().add(home.getMainframe());
             homeFrame.setVisible(true);
