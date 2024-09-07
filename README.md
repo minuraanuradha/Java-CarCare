@@ -38,7 +38,7 @@ To run this program, you need to have the following installed:
 
 1. Clone the repository:
     ```sh
-    git clone https://github.com/yourusername/Java-CareCare.git
+    git clone https://github.com/minuraanuradha/Java-CareCare.git
     cd Java-CareCare
     ```
 
